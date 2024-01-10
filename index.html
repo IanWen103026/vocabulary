@@ -184,7 +184,7 @@
      "Chinese": "行為"
     },
     {
-     "English": "beneath ",
+     "English": "beneath",
      "Chinese": "在…之下"
     },
     {
@@ -1014,8 +1014,7 @@
 
      const nextButton = document.getElementById('next-button');
 
-
-     if (userInput === correctAnswer) {
+     if (userInput.trim() == correctAnswer.trim()) {
        resultElement.textContent = '正確！';
        nextButton.style.display = 'block'; // 顯示下一題按鈕
        correctCount++;
