@@ -968,14 +968,28 @@
      "Chinese": "吸收"
     }
    ];
-   let currentQuestion = 0;
-   let correctCount = 0;
-   let wrongCount = 0;
-   let currentIndex = getRandomIndex();
+let currentQuestion = 0;
+let correctCount = 0;
+let wrongCount = 0;
+let usedIndices = [];
+let currentIndex = getRandomIndex();
 
-   function getRandomIndex() {
-     return Math.floor(Math.random() * jsonData.length);
-   }
+function getRandomIndex() {
+  if (usedIndices.length === jsonData.length) {
+    // Reset usedIndices if all indices have been used
+    usedIndices = [];
+  }
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * jsonData.length);
+  } while (usedIndices.includes(randomIndex));
+
+  usedIndices.push(randomIndex);
+  return randomIndex;
+}
+
+// Rest of your code remains unchanged
+
 
    function getHint() {
         let hint = "";
