@@ -578,13 +578,14 @@ function getRandomIndex() {
   if (usedIndices.length === jsonData.length) {
     // Reset usedIndices if all indices have been used
     usedIndices = [];
+    resultElement.textContent = '已完成作答!';
   }
   let randomIndex;
   do {
     randomIndex = Math.floor(Math.random() * jsonData.length);
   } while (usedIndices.includes(randomIndex));
 
-  usedIndices.push(randomIndex);
+
   return randomIndex;
 }
 
@@ -630,6 +631,7 @@ function getRandomIndex() {
 
      if (userInput.trim() == correctAnswer.trim()) {
        resultElement.textContent = '正確！';
+       usedIndices.push(currentIndex);
        nextButton.style.display = 'block'; // 顯示下一題按鈕
        correctCount++;
         document.getElementById('correct-count').textContent = correctCount;
