@@ -10,7 +10,11 @@
         font-size: 1.2em; /* 調整按鈕、結果和計數器字體大小 */
         margin-top: 10px; /* 調整按鈕、結果和計數器之間的間距 */
       }
-      
+       #counter2 {
+        color: grey;
+        font-size: 1.2em; /* 調整按鈕、結果和計數器字體大小 */
+        margin-top: 10px; /* 調整按鈕、結果和計數器之間的間距 */
+      }
     * {
         border-radius: 15px;
     }
@@ -53,17 +57,23 @@
         font-size: 1.5em;
         margin-top: 10px;
     }
+      #result2 {
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
 </style>
 </head>
 <body>
     
   <div id="question-container">
+    <div id="counter2">最後更新於: 3/30 總題數: <span id="qcount">0</span></div>
     <div id="counter">當前題數: <span id="current-question">0</span> 答對題目數: <span id="correct-count">0</span> 答錯題目數: <span id="wrong-count">0</span> 正確率: <span id="accuracy">0%</span></div>
     <h1 id="chinese-word"></h1>
     <input type="text" id="user-input" placeholder="請輸入答案" onkeydown="checkOnEnter(event)">
     <br>
     <button id="check-button" onclick="checkAnswer()">檢查答案</button>
     <h1 id="result"></h1>
+    <h1 id="result2"></h1>
     <button id="next-button" style="display: none;" onclick="nextQuestion()">下一題</button>
     
   </div>
@@ -460,7 +470,7 @@
     "Chinese": "社交名流"
   },
   {
-    "English": "decreased",
+    "English": "deceased",
     "Chinese": "已故的"
   },
   {
@@ -566,6 +576,1194 @@
   {
     "English": "as as possible",
     "Chinese": "盡可能"
+  },
+    {
+    "English": "accurately",
+    "Chinese": "準確地"
+  },
+  {
+    "English": "additionally",
+    "Chinese": "另外"
+  },
+  {
+    "English": "adventure",
+    "Chinese": "冒險"
+  },
+  {
+    "English": "aid",
+    "Chinese": "幫助"
+  },
+  {
+    "English": "airline",
+    "Chinese": "航空公司"
+  },
+  {
+    "English": "alarmingly",
+    "Chinese": "令人擔憂的"
+  },
+  {
+    "English": "ambitious",
+    "Chinese": "要求高的"
+  },
+  {
+    "English": "announce",
+    "Chinese": "宣布"
+  },
+  {
+    "English": "annoying",
+    "Chinese": "煩人的"
+  },
+  {
+    "English": "apart",
+    "Chinese": "分開的"
+  },
+  {
+    "English": "appeal",
+    "Chinese": "吸引力"
+  },
+  {
+    "English": "apply",
+    "Chinese": "塗"
+  },
+  {
+    "English": "ash",
+    "Chinese": "灰"
+  },
+  {
+    "English": "attribute",
+    "Chinese": "特質"
+  },
+  {
+    "English": "audio",
+    "Chinese": "聲音的"
+  },
+  {
+    "English": "authority",
+    "Chinese": "管理機構"
+  },
+  {
+    "English": "autism",
+    "Chinese": "自閉症"
+  },
+  {
+    "English": "avenue",
+    "Chinese": "方法"
+  },
+  {
+    "English": "await",
+    "Chinese": "等待"
+  },
+  {
+    "English": "aware",
+    "Chinese": "意識到的"
+  },
+  {
+    "English": "backlash",
+    "Chinese": "強烈反應"
+  },
+  {
+    "English": "balance",
+    "Chinese": "平衡"
+  },
+  {
+    "English": "ban",
+    "Chinese": "禁止"
+  },
+  {
+    "English": "banknote",
+    "Chinese": "鈔票"
+  },
+  {
+    "English": "benefit",
+    "Chinese": "受益"
+  },
+  {
+    "English": "bind",
+    "Chinese": "使…黏合"
+  },
+  {
+    "English": "bloom",
+    "Chinese": "開花"
+  },
+  {
+    "English": "breath",
+    "Chinese": "呼吸的空氣"
+  },
+  {
+    "English": "breathe",
+    "Chinese": "呼吸"
+  },
+  {
+    "English": "breathtaking",
+    "Chinese": "令人驚豔的"
+  },
+  {
+    "English": "breeding",
+    "Chinese": "繁殖"
+  },
+  {
+    "English": "bride",
+    "Chinese": "新娘"
+  },
+  {
+    "English": "brilliant",
+    "Chinese": "鮮豔的"
+  },
+  {
+    "English": "buff",
+    "Chinese": "愛好者"
+  },
+  {
+    "English": "burrow",
+    "Chinese": "地洞"
+  },
+  {
+    "English": "buzz",
+    "Chinese": "發出嗡嗡聲"
+  },
+  {
+    "English": "cabin",
+    "Chinese": "機艙"
+  },
+  {
+    "English": "campaign",
+    "Chinese": "鼓吹"
+  },
+  {
+    "English": "carpet",
+    "Chinese": "地毯"
+  },
+  {
+    "English": "characteristic",
+    "Chinese": "特性"
+  },
+  {
+    "English": "charity",
+    "Chinese": "慈善事業"
+  },
+  {
+    "English": "charm",
+    "Chinese": "魅力"
+  },
+  {
+    "English": "cherry blossom",
+    "Chinese": "櫻花"
+  },
+  {
+    "English": "Chinese zodiac",
+    "Chinese": "十二生肖"
+  },
+  {
+    "English": "coincidence",
+    "Chinese": "巧合"
+  },
+  {
+    "English": "community",
+    "Chinese": "社區"
+  },
+  {
+    "English": "conclude",
+    "Chinese": "(作爲）結束"
+  },
+  {
+    "English": "condition",
+    "Chinese": "疾病"
+  },
+  {
+    "English": "conflict",
+    "Chinese": "衝突"
+  },
+  {
+    "English": "confuse",
+    "Chinese": "混淆"
+  },
+  {
+    "English": "connect",
+    "Chinese": "聯繫"
+  },
+  {
+    "English": "considerable",
+    "Chinese": "相當多的"
+  },
+  {
+    "English": "constantly",
+    "Chinese": "總是"
+  },
+  {
+    "English": "container",
+    "Chinese": "容器"
+  },
+  {
+    "English": "contemporary",
+    "Chinese": "當代的"
+  },
+  {
+    "English": "coordination",
+    "Chinese": "協調能力"
+  },
+  {
+    "English": "coral",
+    "Chinese": "珊瑚"
+  },
+  {
+    "English": "costume",
+    "Chinese": "服裝"
+  },
+  {
+    "English": "cover",
+    "Chinese": "報導"
+  },
+  {
+    "English": "craft",
+    "Chinese": "精心打造"
+  },
+  {
+    "English": "creative",
+    "Chinese": "有創意的"
+  },
+  {
+    "English": "creator",
+    "Chinese": "創作者"
+  },
+  {
+    "English": "critter",
+    "Chinese": "動物"
+  },
+  {
+    "English": "curved",
+    "Chinese": "成曲線的"
+  },
+  {
+    "English": "cut through sth",
+    "Chinese": "穿過…"
+  },
+  {
+    "English": "damage",
+    "Chinese": "破壞"
+  },
+  {
+    "English": "daunting",
+    "Chinese": "令人怯步的"
+  },
+  {
+    "English": "dazzling",
+    "Chinese": "零人驚嘆的"
+  },
+  {
+    "English": "deadly",
+    "Chinese": "致命的"
+  },
+  {
+    "English": "dedicate",
+    "Chinese": "把（時間或精力）用在…上"
+  },
+  {
+    "English": "demonstrate",
+    "Chinese": "展示"
+  },
+  {
+    "English": "desirable",
+    "Chinese": "令人嚮往的"
+  },
+  {
+    "English": "dessert",
+    "Chinese": "甜點"
+  },
+  {
+    "English": "destroy",
+    "Chinese": "破壞"
+  },
+  {
+    "English": "determine",
+    "Chinese": "確定"
+  },
+  {
+    "English": "diagnose",
+    "Chinese": "診斷"
+  },
+  {
+    "English": "dilute",
+    "Chinese": "稀釋"
+  },
+  {
+    "English": "dim",
+    "Chinese": "使…暗下來"
+  },
+  {
+    "English": "disabled",
+    "Chinese": "殘障的"
+  },
+  {
+    "English": "dislike",
+    "Chinese": "不喜歡"
+  },
+  {
+    "English": "distinct",
+    "Chinese": "清楚的"
+  },
+  {
+    "English": "distraction",
+    "Chinese": "分散注意力的事物"
+  },
+  {
+    "English": "dough",
+    "Chinese": "生麵糰"
+  },
+  {
+    "English": "drown",
+    "Chinese": "溺死"
+  },
+  {
+    "English": "dump",
+    "Chinese": "傾倒"
+  },
+  {
+    "English": "educate",
+    "Chinese": "教育"
+  },
+  {
+    "English": "elaborate",
+    "Chinese": "精細的"
+  },
+  {
+    "English": "elbow",
+    "Chinese": "肘"
+  },
+  {
+    "English": "embroidery",
+    "Chinese": "刺繡"
+  },
+  {
+    "English": "emergency",
+    "Chinese": "緊急狀況"
+  },
+  {
+    "English": "emperor",
+    "Chinese": "玉皇大帝"
+  },
+  {
+    "English": "endurance",
+    "Chinese": "耐力"
+  },
+  {
+    "English": "engage",
+    "Chinese": "雇用"
+  },
+  {
+    "English": "ensure",
+    "Chinese": "確保"
+  },
+  {
+    "English": "environmental",
+    "Chinese": "環境保護的"
+  },
+  {
+    "English": "estimate",
+    "Chinese": "估算"
+  },
+  {
+    "English": "evacuate",
+    "Chinese": "撤離"
+  },
+  {
+    "English": "eventually",
+    "Chinese": "最終"
+  },
+  {
+    "English": "excel",
+    "Chinese": "擅長"
+  },
+  {
+    "English": "exhibition",
+    "Chinese": "展覽"
+  },
+  {
+    "English": "expert",
+    "Chinese": "專家"
+  },
+  {
+    "English": "extend",
+    "Chinese": "延長"
+  },
+  {
+    "English": "extensive",
+    "Chinese": "廣泛的"
+  },
+  {
+    "English": "extraordinary",
+    "Chinese": "特別的"
+  },
+  {
+    "English": "eyesight",
+    "Chinese": "視力"
+  },
+  {
+    "English": "fade",
+    "Chinese": "褪色"
+  },
+  {
+    "English": "fake",
+    "Chinese": "假的"
+  },
+  {
+    "English": "field",
+    "Chinese": "領域"
+  },
+  {
+    "English": "filter",
+    "Chinese": "過濾"
+  },
+  {
+    "English": "for good measure",
+    "Chinese": "再者"
+  },
+  {
+    "English": "forecast",
+    "Chinese": "預報"
+  },
+  {
+    "English": "frequently",
+    "Chinese": "頻繁地"
+  },
+  {
+    "English": "frighten",
+    "Chinese": "使害怕"
+  },
+  {
+    "English": "gap",
+    "Chinese": "間隙"
+  },
+  {
+    "English": "generation",
+    "Chinese": "代"
+  },
+  {
+    "English": "glory",
+    "Chinese": "壯麗"
+  },
+  {
+    "English": "glute",
+    "Chinese": "臀肌"
+  },
+  {
+    "English": "groom",
+    "Chinese": "新郎"
+  },
+  {
+    "English": "groundhog",
+    "Chinese": "土撥鼠"
+  },
+  {
+    "English": "grueling",
+    "Chinese": "艱辛的"
+  },
+  {
+    "English": "guidance",
+    "Chinese": "指導"
+  },
+  {
+    "English": "habitat",
+    "Chinese": "生長地"
+  },
+  {
+    "English": "harm",
+    "Chinese": "傷害"
+  },
+  {
+    "English": "hatch",
+    "Chinese": "孵化"
+  },
+  {
+    "English": "hibernate",
+    "Chinese": "冬眠"
+  },
+  {
+    "English": "holographic",
+    "Chinese": "全像攝影的"
+  },
+  {
+    "English": "honor",
+    "Chinese": "表示敬意"
+  },
+  {
+    "English": "huge",
+    "Chinese": "極高的"
+  },
+  {
+    "English": "hunch",
+    "Chinese": "弓身"
+  },
+  {
+    "English": "Icelandic",
+    "Chinese": "冰島的"
+  },
+  {
+    "English": "imagination",
+    "Chinese": "想像力"
+  },
+  {
+    "English": "impact",
+    "Chinese": "衝擊"
+  },
+  {
+    "English": "in the name of sth",
+    "Chinese": "以…的名義"
+  },
+  {
+    "English": "in use",
+    "Chinese": "被使用"
+  },
+  {
+    "English": "including",
+    "Chinese": "包含"
+  },
+  {
+    "English": "industrial",
+    "Chinese": "工業的"
+  },
+  {
+    "English": "inevitable",
+    "Chinese": "必然的"
+  },
+  {
+    "English": "ingredient",
+    "Chinese": "成分"
+  },
+  {
+    "English": "input",
+    "Chinese": "輸入"
+  },
+  {
+    "English": "interpretation",
+    "Chinese": "演繹"
+  },
+  {
+    "English": "inventor",
+    "Chinese": "發明家"
+  },
+  {
+    "English": "involve",
+    "Chinese": "包含"
+  },
+  {
+    "English": "journey",
+    "Chinese": "旅行"
+  },
+  {
+    "English": "kilometer",
+    "Chinese": "公里"
+  },
+  {
+    "English": "knead",
+    "Chinese": "揉"
+  },
+  {
+    "English": "layer",
+    "Chinese": "層"
+  },
+  {
+    "English": "legend",
+    "Chinese": "傳說"
+  },
+  {
+    "English": "lengthy",
+    "Chinese": "過長的"
+  },
+  {
+    "English": "lightning",
+    "Chinese": "閃電"
+  },
+  {
+    "English": "limb",
+    "Chinese": "肢體"
+  },
+  {
+    "English": "limited",
+    "Chinese": "受限的"
+  },
+  {
+    "English": "log",
+    "Chinese": "木材"
+  },
+  {
+    "English": "long-term",
+    "Chinese": "長期的"
+  },
+  {
+    "English": "majestic",
+    "Chinese": "雄偉"
+  },
+  {
+    "English": "manage",
+    "Chinese": "管理"
+  },
+  {
+    "English": "manga",
+    "Chinese": "漫畫"
+  },
+  {
+    "English": "marathon",
+    "Chinese": "馬拉松"
+  },
+  {
+    "English": "medium",
+    "Chinese": "媒介"
+  },
+  {
+    "English": "melt",
+    "Chinese": "融化"
+  },
+  {
+    "English": "meticulous",
+    "Chinese": "嚴謹的"
+  },
+  {
+    "English": "mild",
+    "Chinese": "溫暖的"
+  },
+  {
+    "English": "miserable",
+    "Chinese": "糟糕的"
+  },
+  {
+    "English": "mixture",
+    "Chinese": "混合物"
+  },
+  {
+    "English": "mold",
+    "Chinese": "黴菌"
+  },
+  {
+    "English": "monitor",
+    "Chinese": "監控"
+  },
+  {
+    "English": "monitor",
+    "Chinese": "監督"
+  },
+  {
+    "English": "mood",
+    "Chinese": "心情"
+  },
+  {
+    "English": "musical",
+    "Chinese": "音樂的"
+  },
+  {
+    "English": "nap",
+    "Chinese": "小睡"
+  },
+  {
+    "English": "nonsense",
+    "Chinese": "胡說"
+  },
+  {
+    "English": "nuclear",
+    "Chinese": "核能的"
+  },
+  {
+    "English": "observe",
+    "Chinese": "觀察"
+  },
+  {
+    "English": "occasion",
+    "Chinese": "時刻"
+  },
+  {
+    "English": "optimistic",
+    "Chinese": "樂觀的"
+  },
+  {
+    "English": "orchestra",
+    "Chinese": "管弦樂團"
+  },
+  {
+    "English": "organization",
+    "Chinese": "組織"
+  },
+  {
+    "English": "organize",
+    "Chinese": "組織"
+  },
+  {
+    "English": "original",
+    "Chinese": "原先的"
+  },
+  {
+    "English": "overwhelming",
+    "Chinese": "招架不住的"
+  },
+  {
+    "English": "painstakingly",
+    "Chinese": "小心翼翼地"
+  },
+  {
+    "English": "participate",
+    "Chinese": "參與"
+  },
+  {
+    "English": "participation",
+    "Chinese": "參加"
+  },
+  {
+    "English": "passage",
+    "Chinese": "段落"
+  },
+  {
+    "English": "passenger",
+    "Chinese": "乘客"
+  },
+  {
+    "English": "patience",
+    "Chinese": "耐心"
+  },
+  {
+    "English": "peek",
+    "Chinese": "露出"
+  },
+  {
+    "English": "peel",
+    "Chinese": "剝"
+  },
+  {
+    "English": "peer",
+    "Chinese": "同儕"
+  },
+  {
+    "English": "penguin",
+    "Chinese": "企鵝"
+  },
+  {
+    "English": "perch",
+    "Chinese": "把…放置在"
+  },
+  {
+    "English": "physical",
+    "Chinese": "身體的"
+  },
+  {
+    "English": "physical therapist",
+    "Chinese": "物理治療師"
+  },
+  {
+    "English": "poison",
+    "Chinese": "在…下毒"
+  },
+  {
+    "English": "portrait",
+    "Chinese": "肖像"
+  },
+  {
+    "English": "posture",
+    "Chinese": "姿勢"
+  },
+  {
+    "English": "precaution",
+    "Chinese": "預防措施"
+  },
+  {
+    "English": "preserve",
+    "Chinese": "保護"
+  },
+  {
+    "English": "procedure",
+    "Chinese": "程序"
+  },
+  {
+    "English": "profession",
+    "Chinese": "職業"
+  },
+  {
+    "English": "proper",
+    "Chinese": "適當的"
+  },
+  {
+    "English": "protective",
+    "Chinese": "防護的"
+  },
+  {
+    "English": "qualify",
+    "Chinese": "具有資格"
+  },
+  {
+    "English": "radioactive",
+    "Chinese": "放射性的"
+  },
+  {
+    "English": "raft",
+    "Chinese": "筏子"
+  },
+  {
+    "English": "range",
+    "Chinese": "山脈"
+  },
+  {
+    "English": "rank",
+    "Chinese": "具有…等級"
+  },
+  {
+    "English": "reality",
+    "Chinese": "現實"
+  },
+  {
+    "English": "recognize",
+    "Chinese": "意識到"
+  },
+  {
+    "English": "reduce",
+    "Chinese": "減少"
+  },
+  {
+    "English": "regulate",
+    "Chinese": "控制"
+  },
+  {
+    "English": "regulatory",
+    "Chinese": "管理的"
+  },
+  {
+    "English": "relaxing",
+    "Chinese": "令人放鬆的"
+  },
+  {
+    "English": "reminder",
+    "Chinese": "提醒"
+  },
+  {
+    "English": "rep",
+    "Chinese": "重複次數"
+  },
+  {
+    "English": "replace",
+    "Chinese": "代替"
+  },
+  {
+    "English": "replacement",
+    "Chinese": "替代的人或物"
+  },
+  {
+    "English": "require",
+    "Chinese": "需要"
+  },
+  {
+    "English": "rescue",
+    "Chinese": "救援"
+  },
+  {
+    "English": "research",
+    "Chinese": "研究"
+  },
+  {
+    "English": "restoration",
+    "Chinese": "修復"
+  },
+  {
+    "English": "reveal",
+    "Chinese": "揭示"
+  },
+  {
+    "English": "rotten",
+    "Chinese": "腐爛的"
+  },
+  {
+    "English": "satellite",
+    "Chinese": "衛星"
+  },
+  {
+    "English": "scrub",
+    "Chinese": "擦洗"
+  },
+  {
+    "English": "sculpture",
+    "Chinese": "雕像"
+  },
+  {
+    "English": "seal",
+    "Chinese": "封"
+  },
+  {
+    "English": "security",
+    "Chinese": "安全"
+  },
+  {
+    "English": "sensitive",
+    "Chinese": "脆弱的"
+  },
+  {
+    "English": "series",
+    "Chinese": "系列"
+  },
+  {
+    "English": "shallow",
+    "Chinese": "淺的"
+  },
+  {
+    "English": "shell",
+    "Chinese": "外殼"
+  },
+  {
+    "English": "shoulder blade",
+    "Chinese": "肩胛骨"
+  },
+  {
+    "English": "significantly",
+    "Chinese": "顯著地"
+  },
+  {
+    "English": "simulator",
+    "Chinese": "模擬裝置"
+  },
+  {
+    "English": "smooth",
+    "Chinese": "平滑的"
+  },
+  {
+    "English": "sodium bicarbonate",
+    "Chinese": "碳酸氫鈉"
+  },
+  {
+    "English": "solid",
+    "Chinese": "固體的"
+  },
+  {
+    "English": "solution",
+    "Chinese": "溶液"
+  },
+  {
+    "English": "specialize",
+    "Chinese": "專攻"
+  },
+  {
+    "English": "species",
+    "Chinese": "物種"
+  },
+  {
+    "English": "spectator",
+    "Chinese": "觀眾"
+  },
+  {
+    "English": "spectroscopy",
+    "Chinese": "光譜學"
+  },
+  {
+    "English": "spine",
+    "Chinese": "脊椎"
+  },
+  {
+    "English": "splash",
+    "Chinese": "淺起水花"
+  },
+  {
+    "English": "spoil",
+    "Chinese": "破壞"
+  },
+  {
+    "English": "squash",
+    "Chinese": "壓扁"
+  },
+  {
+    "English": "squeeze",
+    "Chinese": "擠"
+  },
+  {
+    "English": "stay tuned",
+    "Chinese": "保持關注"
+  },
+  {
+    "English": "steady",
+    "Chinese": "持續的"
+  },
+  {
+    "English": "stir",
+    "Chinese": "攪拌"
+  },
+  {
+    "English": "strength",
+    "Chinese": "優勢"
+  },
+  {
+    "English": "stressed",
+    "Chinese": "有壓力的"
+  },
+  {
+    "English": "strike",
+    "Chinese": "打"
+  },
+  {
+    "English": "substance",
+    "Chinese": "物質"
+  },
+  {
+    "English": "successive",
+    "Chinese": "接連的"
+  },
+  {
+    "English": "suffer",
+    "Chinese": "遭受"
+  },
+  {
+    "English": "superstition",
+    "Chinese": "迷信"
+  },
+  {
+    "English": "superstitious",
+    "Chinese": "迷信的"
+  },
+  {
+    "English": "surround",
+    "Chinese": "與 密切相關"
+  },
+  {
+    "English": "sweep",
+    "Chinese": "清掃"
+  },
+  {
+    "English": "swift",
+    "Chinese": "迅速的"
+  },
+  {
+    "English": "tadpole",
+    "Chinese": "蝌蚪"
+  },
+  {
+    "English": "take to the sky",
+    "Chinese": "開始飛行"
+  },
+  {
+    "English": "tasty",
+    "Chinese": "美味的"
+  },
+  {
+    "English": "teal",
+    "Chinese": "藍綠色的"
+  },
+  {
+    "English": "temperature",
+    "Chinese": "溫度"
+  },
+  {
+    "English": "tend",
+    "Chinese": "照顧"
+  },
+  {
+    "English": "text",
+    "Chinese": "文字"
+  },
+  {
+    "English": "texture",
+    "Chinese": "質地"
+  },
+  {
+    "English": "the visually impaired",
+    "Chinese": "視覺障礙者"
+  },
+  {
+    "English": "theme",
+    "Chinese": "主題"
+  },
+  {
+    "English": "tighten",
+    "Chinese": "繃緊"
+  },
+  {
+    "English": "tough",
+    "Chinese": "堅固的"
+  },
+  {
+    "English": "trace",
+    "Chinese": "追查"
+  },
+  {
+    "English": "trade",
+    "Chinese": "手藝"
+  },
+  {
+    "English": "tragedy",
+    "Chinese": "慘事"
+  },
+  {
+    "English": "transparency",
+    "Chinese": "透明度"
+  },
+  {
+    "English": "trend",
+    "Chinese": "趨勢"
+  },
+  {
+    "English": "trunk",
+    "Chinese": "軀幹"
+  },
+  {
+    "English": "tuck",
+    "Chinese": "夾入"
+  },
+  {
+    "English": "twist",
+    "Chinese": "轉折"
+  },
+  {
+    "English": "undergo",
+    "Chinese": "經歷"
+  },
+  {
+    "English": "undertake",
+    "Chinese": "進行"
+  },
+  {
+    "English": "variation",
+    "Chinese": "不同"
+  },
+  {
+    "English": "various",
+    "Chinese": "各種不同的"
+  },
+  {
+    "English": "varnish",
+    "Chinese": "透明漆"
+  },
+  {
+    "English": "victory",
+    "Chinese": "勝利"
+  },
+  {
+    "English": "view",
+    "Chinese": "風景"
+  },
+  {
+    "English": "wander",
+    "Chinese": "閒逛"
+  },
+  {
+    "English": "warn",
+    "Chinese": "警告"
+  },
+  {
+    "English": "weekly",
+    "Chinese": "每週"
+  },
+  {
+    "English": "wide-brimmed",
+    "Chinese": "寬帽緣的"
+  },
+  {
+    "English": "wildlife",
+    "Chinese": "野生生物"
+  },
+  {
+    "English": "wine",
+    "Chinese": "葡萄酒"
+  },
+  {
+    "English": "wisteria",
+    "Chinese": "紫藤"
+  },
+  {
+    "English": "workshop",
+    "Chinese": "工作坊"
+  },
+  {
+    "English": "accrue",
+    "Chinese": "增加"
   }
 ];
 let currentQuestion = 0;
@@ -573,13 +1771,9 @@ let correctCount = 0;
 let wrongCount = 0;
 let usedIndices = [];
 let currentIndex = getRandomIndex();
-
+document.getElementById('qcount').textContent = jsonData.length;
 function getRandomIndex() {
-  if (usedIndices.length === jsonData.length) {
-    // Reset usedIndices if all indices have been used
-    usedIndices = [];
-    resultElement.textContent = '已完成作答!';
-  }
+
   let randomIndex;
   do {
     randomIndex = Math.floor(Math.random() * jsonData.length);
@@ -626,7 +1820,7 @@ function getRandomIndex() {
      const userInput = document.getElementById('user-input').value.toLowerCase();
      const correctAnswer = jsonData[currentIndex].English.toLowerCase();
      const resultElement = document.getElementById('result');
-
+    const resultsElement = document.getElementById('result2');
      const nextButton = document.getElementById('next-button');
 
      if (userInput.trim() == correctAnswer.trim()) {
@@ -642,7 +1836,12 @@ function getRandomIndex() {
        wrongCount++;
        document.getElementById('wrong-count').textContent = wrongCount;
      }
+        if (usedIndices.length === jsonData.length) {
+          // Reset usedIndices if all indices have been used
+          usedIndices = [];
 
+          resultsElement.textContent = '已完成作答!';
+        }
 
    }
 
