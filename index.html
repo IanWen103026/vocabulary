@@ -79,7 +79,7 @@
   </div>
 
   <script>
-    // 直接將 JSON 資料嵌入到 JavaScript 中
+    
     const jsonData = [
   {
     "English": "promise",
@@ -254,6 +254,7 @@
     "Chinese": "(在操作或性能上) 勝過"
   }
 ];
+    
 let currentQuestion = 0;
 let correctCount = 0;
 let wrongCount = 0;
@@ -270,9 +271,6 @@ function getRandomIndex() {
 
   return randomIndex;
 }
-
-// Rest of your code remains unchanged
-
 
    function getHint() {
         let hint = "";
