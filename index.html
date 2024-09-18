@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>段考單字題庫</title>
+  <title>單字題庫</title>
   <style>
     #counter {
         color: grey;
@@ -66,7 +66,7 @@
 <body>
     
   <div id="question-container">
-    <div id="counter2">最後更新於: 2024/9/5 總題數: <span id="qcount">0</span></div>
+    <div id="counter2">最後更新於: 2024/9/18 總題數: <span id="qcount">0</span></div>
     <div id="counter">當前題數: <span id="current-question">0</span> 答對題目數: <span id="correct-count">0</span> 答錯題目數: <span id="wrong-count">0</span> 正確率: <span id="accuracy">0%</span></div>
     <h1 id="chinese-word"></h1>
     <input type="text" id="user-input" placeholder="請輸入答案" onkeydown="checkOnEnter(event)">
@@ -82,176 +82,212 @@
     
     const jsonData = [
   {
-    "English": "promise",
-    "Chinese": "承諾"
+    "English": "refer",
+    "Chinese": "指的是"
   },
   {
-    "English": "material",
-    "Chinese": "材料"
+    "English": "idiom",
+    "Chinese": "慣用語 成語"
   },
   {
-    "English": "mention",
-    "Chinese": "提及"
+    "English": "behavior",
+    "Chinese": "行為"
   },
   {
-    "English": "structure",
-    "Chinese": "結構體/建築物"
+    "English": "signature",
+    "Chinese": "簽名"
   },
   {
-    "English": "capable",
-    "Chinese": "能夠"
+    "English": "peep",
+    "Chinese": "偷窺"
   },
   {
-    "English": "capability",
-    "Chinese": "能力"
+    "English": "legend",
+    "Chinese": "傳奇"
   },
   {
-    "English": "collaborate",
-    "Chinese": "合作 (v)"
+    "English": "inappropriate",
+    "Chinese": "不恰當"
   },
   {
-    "English": "collaboration",
-    "Chinese": "合作 (n)"
+    "English": "phenomenon",
+    "Chinese": "現象"
   },
   {
-    "English": "architect",
-    "Chinese": "建築師"
+    "English": "possession",
+    "Chinese": "財產"
   },
   {
-    "English": "architecture",
-    "Chinese": "建築學/建築風格"
+    "English": "carrier",
+    "Chinese": "帶原者"
   },
   {
-    "English": "graduate",
-    "Chinese": "大學畢業生"
+    "English": "characterize",
+    "Chinese": "描述…的特性"
   },
   {
-    "English": "graduation",
-    "Chinese": "畢業 (n)"
+    "English": "timid",
+    "Chinese": "膽小"
   },
   {
-    "English": "construct",
-    "Chinese": "建造"
+    "English": "identify",
+    "Chinese": "辨識"
   },
   {
-    "English": "construction",
-    "Chinese": "建築物"
+    "English": "illustrate",
+    "Chinese": "說明"
   },
   {
-    "English": "constructive",
-    "Chinese": "有建設性的"
+    "English": "spring from",
+    "Chinese": "起源於"
   },
   {
-    "English": "slightly",
-    "Chinese": "稍微"
+    "English": "pass sth on to sb",
+    "Chinese": "把…傳給"
   },
   {
-    "English": "slight",
-    "Chinese": "細微的"
+    "English": "personify",
+    "Chinese": "把…擬人化"
   },
   {
-    "English": "rank",
-    "Chinese": "排序為"
+    "English": "infamous",
+    "Chinese": "聲明狼籍的"
   },
   {
-    "English": "ranking",
-    "Chinese": "排名"
+    "English": "voyeur",
+    "Chinese": "偷窺者"
   },
   {
-    "English": "unique",
-    "Chinese": "獨特的"
+    "English": "lifestyle",
+    "Chinese": "生活方式"
   },
   {
-    "English": "innovative",
-    "Chinese": "創新的"
+    "English": "surname",
+    "Chinese": "姓氏"
   },
   {
-    "English": "innovate",
-    "Chinese": "創新"
+    "English": "marvelous",
+    "Chinese": "令人驚豔的"
   },
   {
-    "English": "innovation",
-    "Chinese": "新方法"
+    "English": "distinct",
+    "Chinese": "明顯不同的"
   },
   {
-    "English": "adjust",
-    "Chinese": "調整 (v)"
+    "English": "numerous",
+    "Chinese": "許多的"
   },
   {
-    "English": "adjustment",
-    "Chinese": "調整 (n)"
+    "English": "blooming",
+    "Chinese": "開花的"
   },
   {
-    "English": "rely",
-    "Chinese": "依賴"
+    "English": "blossom",
+    "Chinese": "開花的"
   },
   {
-    "English": "reliable",
-    "Chinese": "可信賴的"
+    "English": "boast",
+    "Chinese": "擁有"
   },
   {
-    "English": "feedback",
-    "Chinese": "回饋意見"
+    "English": "immigrate",
+    "Chinese": "遷入"
   },
   {
-    "English": "element",
-    "Chinese": "要素"
+    "English": "loosen",
+    "Chinese": "放鬆"
   },
   {
-    "English": "elementary",
-    "Chinese": "初級的/基礎的"
+    "English": "tickle",
+    "Chinese": "使開心"
   },
   {
-    "English": "stability",
-    "Chinese": "穩定"
+    "English": "chef",
+    "Chinese": "廚師"
   },
   {
-    "English": "stable",
-    "Chinese": "穩定的"
+    "English": "exhibition",
+    "Chinese": "展覽會"
   },
   {
-    "English": "route",
-    "Chinese": "途徑"
+    "English": "venue",
+    "Chinese": "會場"
   },
   {
-    "English": "explore",
-    "Chinese": "探索 (v)"
+    "English": "pasta",
+    "Chinese": "義大利麵"
   },
   {
-    "English": "exploration",
-    "Chinese": "探索 (n)"
+    "English": "gallery",
+    "Chinese": "展覽館"
   },
   {
-    "English": "trial and error",
-    "Chinese": "反覆試驗"
+    "English": "year-round",
+    "Chinese": "一年到頭"
   },
   {
-    "English": "in charge",
-    "Chinese": "主控"
+    "English": "tulip",
+    "Chinese": "鬱金香"
   },
   {
-    "English": "figure out",
-    "Chinese": "想出"
+    "English": "alfresco",
+    "Chinese": "露天戶外的"
   },
   {
-    "English": "roll up one's sleeves",
-    "Chinese": "挽起袖子"
+    "English": "taste bud",
+    "Chinese": "味蕾"
   },
   {
-    "English": "get down to",
-    "Chinese": "開始做某事"
+    "English": "wrap up",
+    "Chinese": "穿得暖和"
   },
   {
-    "English": "marshmallow",
-    "Chinese": "棉花糖"
+    "English": "in short",
+    "Chinese": "總之"
   },
   {
-    "English": "kindergartener",
-    "Chinese": "幼稚園生"
+    "English": "disaster",
+    "Chinese": "天災"
   },
   {
-    "English": "outperform",
-    "Chinese": "(在操作或性能上) 勝過"
+    "English": "previous",
+    "Chinese": "先前"
+  },
+  {
+    "English": "intense",
+    "Chinese": "劇烈"
+  },
+  {
+    "English": "electricity",
+    "Chinese": "電力"
+  },
+  {
+    "English": "absolutely",
+    "Chinese": "絕對"
+  },
+  {
+    "English": "inspect",
+    "Chinese": "檢查"
+  },
+  {
+    "English": "seal",
+    "Chinese": "密封"
+  },
+  {
+    "English": "blackout",
+    "Chinese": "停電"
+  },
+  {
+    "English": "outage",
+    "Chinese": "...短缺"
+  },
+  {
+    "English": "nonperishable",
+    "Chinese": "不易腐敗的"
+  },
+  {
+    "English": "expiration",
+    "Chinese": "截止"
   }
 ];
     
