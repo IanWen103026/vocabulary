@@ -38,20 +38,92 @@
         margin-bottom: 10px;
     }
 
-    #user-input {
-        background-color: rgb(35, 35, 35);
-        color: white;
-        font-size: 1.5em;
-        margin-bottom: 20px;
-    }
+ 
+  .pushable {
+  position: relative;
+  background: transparent;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
+  outline-color: deeppink;
+  transition: filter 250ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-    #next-button,
-    #check-button {
-        background-color: rgb(35, 35, 35);
-        color: white;
-        font-size: 1.5em;
-        margin: 0 auto;
-    }
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: hsl(226, 25%, 69%);
+  border-radius: 8px;
+  filter: blur(2px);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    hsl(248, 39%, 39%) 0%,
+    hsl(248, 39%, 49%) 8%,
+    hsl(248, 39%, 39%) 92%,
+    hsl(248, 39%, 29%) 100%
+  );
+}
+
+.front {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  background: hsl(248, 53%, 58%);
+  padding: 16px 32px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.pushable:hover {
+  filter: brightness(110%);
+}
+
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
 
     #result {
         font-size: 1.5em;
@@ -61,6 +133,79 @@
         font-size: 1.5em;
         margin-top: 10px;
     }
+    .wave-group {
+  position: relative;
+}
+
+.wave-group .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+
+.wave-group .input:focus {
+  outline: none;
+}
+
+.wave-group .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * .05s);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #5264AE;
+}
+
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.wave-group .bar:before,.wave-group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: hsl(226, 25%, 69%);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
+}
+
+
 </style>
 </head>
 <body>
@@ -69,13 +214,36 @@
     <div id="counter2">最後更新於: 2024/10/9 總題數: <span id="qcount">0</span></div>
     <div id="counter">當前題數: <span id="current-question">0</span> 答對題目數: <span id="correct-count">0</span> 答錯題目數: <span id="wrong-count">0</span> 正確率: <span id="accuracy">0%</span></div>
     <h1 id="chinese-word"></h1>
-    <input type="text" id="user-input" placeholder="請輸入答案" onkeydown="checkOnEnter(event)">
+    <div class="wave-group">
+  <input type="text" id="user-input" class="input" onkeydown="checkOnEnter(event)">
+  <span class="bar"></span>
+  <label class="label">
+    <span class="label-char" style="--index: 0">A</span>
+    <span class="label-char" style="--index: 1">n</span>
+    <span class="label-char" style="--index: 2">s</span>
+    <span class="label-char" style="--index: 3"></span>
+  </label>
+  </div>
+
     <br>
-    <button id="check-button" onclick="checkAnswer()">檢查答案</button>
+
+  <button id="check-button" onclick="checkAnswer()" class="pushable">
+    <span class="shadow"></span>
+    <span class="edge"></span>
+    <span class="front"> 檢查答案 </span>
+  </button>
+
     <h1 id="result"></h1>
     <h1 id="result2"></h1>
-    <button id="next-button" style="display: none;" onclick="nextQuestion()">下一題</button>
     
+    <br>
+
+  <button class="pushable" id="next-button" style="display: none;" onclick="nextQuestion()">
+    <span class="shadow"></span>
+    <span class="edge"></span>
+    <span class="front"> 下一題 </span>
+  </button>
+
   </div>
 
   <script>
