@@ -15,9 +15,6 @@
         font-size: 1.2em; /* 調整按鈕、結果和計數器字體大小 */
         margin-top: 10px; /* 調整按鈕、結果和計數器之間的間距 */
       }
-    * {
-        border-radius: 15px;
-    }
     body {
         background-color: rgb(45, 45, 45);
         font-family: Arial, sans-serif;
@@ -37,10 +34,13 @@
         font-size: 2em;
         margin-bottom: 10px;
     }
-
+* {
+  align-items: center;
+        justify-content: center;
+}
  
   .pushable {
-  position: relative;
+    position: relative;
   background: transparent;
   padding: 0px;
   border: none;
@@ -57,7 +57,6 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: hsl(226, 25%, 69%);
   border-radius: 8px;
   filter: blur(2px);
   will-change: transform;
@@ -74,10 +73,10 @@
   border-radius: 8px;
   background: linear-gradient(
     to right,
-    hsl(248, 39%, 39%) 0%,
-    hsl(248, 39%, 49%) 8%,
-    hsl(248, 39%, 39%) 92%,
-    hsl(248, 39%, 29%) 100%
+    hsl(41, 71%, 47%) 0%,
+    hsl(31, 39%, 49%) 8%,
+    hsl(39, 73%, 50%) 92%,
+    hsl(40, 63%, 41%) 100%
   );
 }
 
@@ -85,8 +84,8 @@
   display: block;
   position: relative;
   border-radius: 8px;
-  background: hsl(248, 53%, 58%);
-  padding: 16px 32px;
+  background: hsl(37, 86%, 44%);
+  padding: 14px 25px;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
@@ -137,93 +136,130 @@
   position: relative;
 }
 
-.wave-group .input {
-  font-size: 16px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 200px;
-  border: none;
-  border-bottom: 1px solid #515151;
-  background: transparent;
+
+.textInputWrapper {
+  position: relative;
+  margin: 12px 5px;
+  --accent-color: #f9b339;
 }
 
-.wave-group .input:focus {
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 100%;
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+  border-bottom: 2px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+  content: "";
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.textInput::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.582);
+}
+
+.textInputWrapper .textInput {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 36px;
+  background-color: #252525;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: #e8e8e8;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+  width: 100%;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
   outline: none;
 }
 
-.wave-group .label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  display: flex;
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  background-color: #353535;
 }
 
-.wave-group .label-char {
-  transition: 0.2s ease all;
-  transition-delay: calc(var(--index) * .05s);
+.textInputWrapper:focus-within .textInput::placeholder {
+  opacity: 0;
 }
 
-.wave-group .input:focus ~ label .label-char,
-.wave-group .input:valid ~ label .label-char {
-  transform: translateY(-20px);
-  font-size: 14px;
-  color: #5264AE;
+#reset-button {
+    position: fixed; /* 固定位置 */
+    top: 10px;       /* 距離頂部10px */
+    left: 10px;      /* 距離左側10px */
+    z-index: 1000;   /* 保證按鈕顯示在其他元素上 */
+    padding: 10px 20px;
+    background-color: #3e3d3d; /* 紅色背景 */
+    color: white;    /* 白色文字 */
+    border: none;    /* 去除邊框 */
+    border-radius: 5px; /* 圓角 */
+    cursor: pointer; /* 手型鼠標指針 */
+    font-size: 14px; /* 字體大小 */
 }
 
-.wave-group .bar {
-  position: relative;
-  display: block;
-  width: 200px;
+#reset-button:hover {
+    background-color: #222222; /* 懸停時加深紅色 */
 }
-
-.wave-group .bar:before,.wave-group .bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: hsl(226, 25%, 69%);
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.wave-group .bar:before {
-  left: 50%;
-}
-
-.wave-group .bar:after {
-  right: 50%;
-}
-
-.wave-group .input:focus ~ .bar:before,
-.wave-group .input:focus ~ .bar:after {
-  width: 50%;
-}
-
 
 </style>
 </head>
 <body>
-    
+  <button id="reset-button" onclick="resetProgress()">重置進度</button>
+
   <div id="question-container">
     <div id="counter2">最後更新於: 2024/10/9 總題數: <span id="qcount">0</span></div>
     <div id="counter">當前題數: <span id="current-question">0</span> 答對題目數: <span id="correct-count">0</span> 答錯題目數: <span id="wrong-count">0</span> 正確率: <span id="accuracy">0%</span></div>
     <h1 id="chinese-word"></h1>
-    <div class="wave-group">
-  <input type="text" id="user-input" class="input" onkeydown="checkOnEnter(event)">
-  <span class="bar"></span>
-  <label class="label">
-    <span class="label-char" style="--index: 0">A</span>
-    <span class="label-char" style="--index: 1">n</span>
-    <span class="label-char" style="--index: 2">s</span>
-    <span class="label-char" style="--index: 3"></span>
-  </label>
-  </div>
+
+    <div class="textInputWrapper" styles="width: 40vw;">
+      <input styles="width: 50vw;" placeholder="輸入答案" type="text" id="user-input" onkeydown="checkOnEnter(event)" class="textInput">
+    </div>
+
 
     <br>
 
@@ -1519,6 +1555,9 @@
   }
 ];
     
+
+
+
 let currentQuestion = 0;
 let correctCount = 0;
 let wrongCount = 0;
@@ -1535,6 +1574,59 @@ function getRandomIndex() {
 
   return randomIndex;
 }
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+  console.log(name, value, days)
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+// Function to get a cookie
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Store quiz progress in cookies
+function storeProgress() {
+    setCookie('correctCount', correctCount, 7); // Store correct answers count
+    setCookie('wrongCount', wrongCount, 7); // Store wrong answers count
+    setCookie('usedIndices', JSON.stringify(usedIndices), 7); // Store used question indices
+}
+
+// Load quiz progress from cookies
+function loadProgress() {
+    const storedCorrectCount = getCookie('correctCount');
+    const storedWrongCount = getCookie('wrongCount');
+    const storedUsedIndices = getCookie('usedIndices');
+
+    if (storedCorrectCount !== null) {
+        correctCount = parseInt(storedCorrectCount, 10);
+        document.getElementById('correct-count').textContent = correctCount;
+    }
+    
+    if (storedWrongCount !== null) {
+        wrongCount = parseInt(storedWrongCount, 10);
+        document.getElementById('wrong-count').textContent = wrongCount;
+    }
+
+    if (storedUsedIndices !== null) {
+        usedIndices = JSON.parse(storedUsedIndices);
+    }
+}
+
+// Call this function when loading the quiz
+loadProgress();
+
+
 
    function getHint() {
         let hint = "";
@@ -1563,41 +1655,43 @@ function getRandomIndex() {
      chineseWordElement.textContent = getHint() + " " + jsonData[currentIndex].Chinese;
    }
 
-   function checkAnswer() {
+// Update the function to save progress after checking each answer
+function checkAnswer() {
     const checkElement = document.getElementById('check-button');
     checkElement.style.display = 'none';
-     const userInput = document.getElementById('user-input').value.toLowerCase();
-     const correctAnswer = jsonData[currentIndex].English.toLowerCase();
-     const resultElement = document.getElementById('result');
+    const userInput = document.getElementById('user-input').value.toLowerCase();
+    const correctAnswer = jsonData[currentIndex].English.toLowerCase();
+    const resultElement = document.getElementById('result');
     const resultsElement = document.getElementById('result2');
-     const nextButton = document.getElementById('next-button');
+    const nextButton = document.getElementById('next-button');
 
-     if (userInput.trim() == correctAnswer.trim()) {
-       resultElement.textContent = '正確！';
-       usedIndices.push(currentIndex);
-       nextButton.style.display = 'block'; // 顯示下一題按鈕
-       correctCount++;
+    if (userInput.trim() == correctAnswer.trim()) {
+        resultElement.textContent = '正確！';
+        usedIndices.push(currentIndex);
+        nextButton.style.display = ''; // 顯示下一題按鈕
+        correctCount++;
         document.getElementById('correct-count').textContent = correctCount;
-     } else {
-       resultElement.textContent = '錯誤，正確答案是 : ' + correctAnswer;
-       
-       nextButton.style.display = 'block'; // 顯示下一題按鈕
-       wrongCount++;
-       document.getElementById('wrong-count').textContent = wrongCount;
-     }
-        if (usedIndices.length === jsonData.length) {
-          // Reset usedIndices if all indices have been used
-          usedIndices = [];
+    } else {
+        resultElement.textContent = '錯誤，正確答案是 : ' + correctAnswer;
+        nextButton.style.display = ''; // 顯示下一題按鈕
+        wrongCount++;
+        document.getElementById('wrong-count').textContent = wrongCount;
+    }
 
-          resultsElement.textContent = '已完成作答!';
-        }
+    if (usedIndices.length === jsonData.length) {
+        // Reset usedIndices if all indices have been used
+        usedIndices = [];
+        resultsElement.textContent = '已完成作答!';
+    }
+}
 
-   }
+// Continue using the rest of your existing functions
+
 
    function checkOnEnter(event) {
     if (event.key === 'Enter') {
         const nextButton = document.getElementById('next-button');
-      if (nextButton.style.display == 'block') {
+      if (nextButton.style.display == '') {
 
         nextQuestion();
       } else {
@@ -1608,19 +1702,48 @@ function getRandomIndex() {
   }
 
    function nextQuestion() {
+    storeProgress();
     const nextButton = document.getElementById('next-button');
     const resultElement = document.getElementById('result');
     const checkElement = document.getElementById('check-button');
-    checkElement.style.display = 'block';
+    checkElement.style.display = '';
     document.getElementById('user-input').value = '';
     resultElement.textContent = '';
     currentIndex = getRandomIndex();
     nextButton.style.display = 'none'; 
     loadQuestion();
     document.getElementById('accuracy').textContent = (correctCount / (currentQuestion-1) * 100).toFixed(1) + "%"
-
   }
    loadQuestion();
+
+
+   // 重置進度，清除所有的cookie和界面數據
+function resetProgress() {
+    // 清除計數
+    correctCount = 0;
+    wrongCount = 0;
+    usedIndices = [];
+    currentQuestion = 0;
+
+    // 更新界面
+    document.getElementById('correct-count').textContent = correctCount;
+    document.getElementById('wrong-count').textContent = wrongCount;
+    document.getElementById('current-question').textContent = currentQuestion;
+    document.getElementById('accuracy').textContent = "0%";
+    document.getElementById('result2').textContent = '';
+    
+    // 清除 cookie
+    setCookie('correctCount', '', -1);  // 設置過期時間為負數來刪除cookie
+    setCookie('wrongCount', '', -1);
+    setCookie('usedIndices', '', -1);
+
+    // 重置問題
+    currentIndex = getRandomIndex();
+    loadQuestion();
+}
+
+// 其餘代碼保持不變
+
   </script>
 </body>
 </html>
