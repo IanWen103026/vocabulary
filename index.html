@@ -127,7 +127,7 @@
   },
   {
     "Chinese": "考慮到、考量到某事物",
-    "English": "with sth in mind"
+    "English": "with in mind"
   },
   {
     "Chinese": "n. 假髮",
@@ -211,11 +211,11 @@
   },
   {
     "Chinese": "被……取代；對……讓步",
-    "English": "give way to N"
+    "English": "give way to"
   },
   {
     "Chinese": "與……有關",
-    "English": "be/become associated with"
+    "English": "become associated with"
   },
   {
     "Chinese": "在某種程度上；部分地",
@@ -255,7 +255,7 @@
   },
   {
     "Chinese": "有機會……",
-    "English": "have a shot at N/V-ing"
+    "English": "have a shot at"
   },
   {
     "Chinese": "從零開始、從頭做起",
@@ -303,7 +303,7 @@
   },
   {
     "Chinese": "表示「為……帶來極大貢獻；對……是一大助力」",
-    "English": "make a great addition to N"
+    "English": "make a great addition to"
   },
   {
     "Chinese": "n. 對比、對照；明顯的差別",
@@ -347,11 +347,15 @@
   },
   {
     "Chinese": "囚禁、俘虜、關押某人",
-    "English": "hold/take sb captive"
+    "English": "hold captive"
+  },
+  {
+    "Chinese": "囚禁、俘虜、關押某人",
+    "English": "take captive"
   },
   {
     "Chinese": "非常重視並確保",
-    "English": "make it a point to V"
+    "English": "make it a point to"
   },
   {
     "Chinese": "n., v. 提升、推動、促進",
@@ -387,7 +391,7 @@
   },
   {
     "Chinese": "遮擋、保護……使免於……",
-    "English": "shield sb/sth from sb/sth"
+    "English": "shield from"
   },
   {
     "Chinese": "adv. 猛烈地、積極進取地；挑釁地",
@@ -463,7 +467,7 @@
   },
   {
     "Chinese": "開始使用……、開始做……",
-    "English": "turn to sth"
+    "English": "turn to"
   },
   {
     "Chinese": "n. 疾病、失調；凌亂",
@@ -555,7 +559,11 @@
   },
   {
     "Chinese": "把……付諸實行",
-    "English": "put sth into practice/action"
+    "English": "put into practice"
+  },
+  {
+    "Chinese": "把……付諸實行",
+    "English": "put into action"
   },
   {
     "Chinese": "失靈；(機械)故障；(車輛)拋錨",
@@ -583,7 +591,7 @@
   },
   {
     "Chinese": "對……實施限額",
-    "English": "impose a cap on N"
+    "English": "impose a cap on"
   },
   {
     "Chinese": "n. 壓力；張力",
@@ -651,7 +659,7 @@
   },
   {
     "Chinese": "試圖、努力要……",
-    "English": "in a bid to V"
+    "English": "in a bid to"
   },
   {
     "Chinese": "n. 過度旅遊",
@@ -771,7 +779,7 @@
   },
   {
     "Chinese": "把……傳給……",
-    "English": "pass sth on to sb"
+    "English": "pass on to"
   },
   {
     "Chinese": "adj. 神話的；虛構的",
@@ -903,7 +911,11 @@
   },
   {
     "Chinese": "太空毯；緊急保暖用毯",
-    "English": "space/thermal blanket"
+    "English": "thermal blanket"
+  },
+  {
+    "Chinese": "太空毯；緊急保暖用毯",
+    "English": "space blanket"
   },
   {
     "Chinese": "防水火柴",
@@ -1019,7 +1031,7 @@
   },
   {
     "Chinese": "表示「某人想到某事」",
-    "English": "sth occurs to sb"
+    "English": "occurs to"
   },
   {
     "Chinese": "指「自來水」",
@@ -1035,7 +1047,7 @@
   },
   {
     "Chinese": "表示「繼續、接著做……」",
-    "English": "move on to N/V"
+    "English": "move on to"
   },
   {
     "Chinese": "指「過度準備的」",
@@ -1043,7 +1055,7 @@
   },
   {
     "Chinese": "表示「使某人措手不及」",
-    "English": "catch sb off guard"
+    "English": "catch off guard"
   },
   {
     "Chinese": "n. 集會；群眾大會",
@@ -1227,19 +1239,23 @@
   },
   {
     "Chinese": "傳承；流傳",
-    "English": "pass down/on"
+    "English": "pass on"
+  },
+  {
+    "Chinese": "傳承；流傳",
+    "English": "pass down"
   },
   {
     "Chinese": "為…做好準備；使…成為可能",
-    "English": "pave the way to/for sth"
+    "English": "pave the way to"
   },
   {
     "Chinese": "(某地)擁有…；是…的所在地、居住地",
-    "English": "be home to N"
+    "English": "be home to"
   },
   {
     "Chinese": "不只…也…",
-    "English": "not only ... but also ..."
+    "English": "not only but also"
   },
   {
     "Chinese": "n. 世代、同代人；(能源的)產生",
@@ -1311,11 +1327,11 @@
   },
   {
     "Chinese": "處理、面對…",
-    "English": "contend with N"
+    "English": "contend with"
   },
   {
     "Chinese": "設法到達…",
-    "English": "find one's way into/to N"
+    "English": "find one's way into"
   },
   {
     "Chinese": "對…進行重大調整；使…震驚",
@@ -1356,20 +1372,18 @@ function getRandomIndex() {
         let hint = "";
         let engstring = jsonData[currentIndex].English.split(" ");
         for (let i = 0; i < engstring.length; i++) {
-            if (engstring[i].length <= 1) {
-            } else if (engstring[i].length <= 3) {
+            if (engstring[i].length <= 3) {
                 hint = hint + "_ "
             } else {
                 const word = engstring[i];
                 const firstLetter = word[0];
                 const lastLetter = word[word.length - 1];
                 
-                hint += `${firstLetter}_${lastLetter} `;
+                hint += firstLetter;
+                hint += "_";
+                hint += lastLetter;
             }
-
-
           }
-
         return hint;
     }
 
