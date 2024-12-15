@@ -640,6 +640,11 @@ function loadProgress() {
     const storedWrongCount = getCookie('wrongCount');
     const storedUsedIndices = getCookie('usedIndices');
 
+    if (storedCorrectCount !== null && storedWrongCount !== null) {
+        currentQuestion = parseInt(storedCorrectCount, 10) + parseInt(storedWrongCount, 10);
+        document.getElementById('current-question').textContent = currentQuestion;
+    }
+
     if (storedCorrectCount !== null) {
         correctCount = parseInt(storedCorrectCount, 10);
         document.getElementById('correct-count').textContent = correctCount;
@@ -685,6 +690,7 @@ loadProgress();
     document.getElementById('current-question').textContent = currentQuestion;
      const chineseWordElement = document.getElementById('chinese-word');
      chineseWordElement.textContent = getHint() + " " + jsonData[currentIndex].Chinese;
+     document.getElementById('accuracy').textContent = (correctCount / (currentQuestion-1) * 100).toFixed(1) + "%"
    }
 
 // Update the function to save progress after checking each answer
